@@ -45,7 +45,7 @@ public class MergeSort {
         // merge src[low, mid] src[mid+1, high]
         int i =low, j = mid + 1, k=i;
         for (; i <= mid && j<=high;) {
-            if (c.compare(src[i], src[j]) < 0) {
+            if (c.compare(src[i], src[j]) <= 0) {
                 dest[k++] = src[i++];
             } else {
                 dest[k++] = src[j++];
