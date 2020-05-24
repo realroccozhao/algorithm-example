@@ -42,10 +42,13 @@ public class InsertionSort {
         return target;
     }
 
-    static void insertionSortV2(Integer[] src, int low, int high, boolean printResult) {
+    // 时间复杂度： 1 + 2 + 3 + ... + (high - low) = (high - low) * (high - low) / 2
+    private static void insertionSortV2(Integer[] src, int low, int high, boolean printResult) {
         for (int i = low; i<= high; i++) {
             int j = i;
             int value;
+
+            // 每次都从i到low遍历， 内层相当于冒泡？ 把小的数字冒泡到前面
             while (j > low && src[j] < src[j-1]) {
                 value = src[j];
                 src[j] = src[j-1];
@@ -59,7 +62,8 @@ public class InsertionSort {
         }
     }
 
-    static void binaryInsertionSort(Integer[] src, int low, int high, boolean printResult) {
+    // 排序一个已经有序的数组
+    private static void binaryInsertionSort(Integer[] src, int low, int high, boolean printResult) {
         for (int i= low; i<=high; i++) {
             Integer value = src[i];
             int p=low,q=i - 1;
@@ -77,6 +81,7 @@ public class InsertionSort {
                 src[j] = src[j-1];
             }
 
+            // p为找到的位置
             src[p] = value;
         }
 

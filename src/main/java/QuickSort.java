@@ -1,5 +1,8 @@
 import org.json.JSONObject;
 
+/**
+ * 平均时间复杂度 O(nlogn), 最好O(nlogn), 最坏O(n^2)， 空间复杂度O(logn)
+ */
 public class QuickSort {
 
     public static void main(String[] args) {
@@ -52,6 +55,7 @@ public class QuickSort {
         return i+1;
     }
 
+    //[*]
     // 选择第一个元素作为枢轴, 从low+1开始比较值和pivot， 小于pivot则交换i与j， 最后交换i与low， 这样交换后low左侧均为小于pivot的值
     static Integer partitionV2(Integer src[], int low, int high) {
         int pivot = src[low];
@@ -63,6 +67,7 @@ public class QuickSort {
             }
         }
 
+        // i是最后一个小于pivot的元素的位置
         swap(src, i, low);
         return i;
     }
